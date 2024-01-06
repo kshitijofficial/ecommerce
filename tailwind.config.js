@@ -9,6 +9,7 @@ export default {
           orange: "#D48D3B",
           green: "#3E9242",
         },
+        cardBg: "#F2F4F7",
         secondary: "#282828",
         "gray-200": "#EAECF0",
         "gray-300": "D0D5DD",
@@ -20,7 +21,6 @@ export default {
         "white-200": "#EDF0F8",
         "black-100": "#3D4258",
         "neutral-black": "#23263B",
-        cardBg: "#F2F4F7",
       },
       screens: {
         vs: "300px",
@@ -28,15 +28,6 @@ export default {
         md: "700px",
         lg: "1200px",
       },
-      // boxShadow: {
-      //   xs: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
-      // },
-      // maxWidth: {
-      //   "10xl": "1440px",
-      // },
-      // borderRadius: {
-      //   10: "10px",
-      // }
     },
   },
   plugins: [],

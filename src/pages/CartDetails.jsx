@@ -44,31 +44,23 @@ const CartDetails = () => {
     return cartProductIdList.map((product) => (
       <div key={product.id} className="w-screen yFlex px-6 ">
         {product.qty > 0 ? (
-          <div className="bg-cardBg shadow-lg xFlex  gap-4 px-6 py-6 s:px-10 s:py-10 rounded-xl w-full max-w-[400px] border ">
+          <div className="cartDetails-wrapper">
             <div className="w-[220px] h-[100px]">
-              <img
-                src={product.img}
-                className="w-full h-full object-cover rounded-lg"
-              ></img>
+              <img src={product.img} className="cartDetails-img"></img>
             </div>
-            <div className="yFlex  gap-6 justify-between !items-center w-full max-w-[200px]  ">
-              <h3 className="font-semibold text-[18px] text-primary">
-                {product.name}
-              </h3>
+            <div className="cartDetails-content  ">
+              <h3 className="cartDetails-content-heading ">{product.name}</h3>
               <div className="xFlex gap-4">
                 <button
-                  className="bg-gray-400 bg-opacity-60  rounded-xl text-[16px] font-semibold text-gray-900 p-1 hover:bg-gray-500"
+                  className="cartBtn"
                   onClick={() => decreaseQuanity(product)}
                 >
                   <Minus className=" h-4 w-4" />
                 </button>
-                <p className="font-semibold text-[16px] text-primary">
-                  {" "}
-                  {product.qty}
-                </p>
+                <p className="cart-quantity"> {product.qty}</p>
 
                 <button
-                  className="bg-gray-400 bg-opacity-60 p-1 hover:bg-gray-500 rounded-xl text-[20px] font-semibold text-gray-900 "
+                  className="cartBtn "
                   onClick={() => increaseQuanity(product)}
                 >
                   <Plus className=" h-4 w-4" />
@@ -77,7 +69,7 @@ const CartDetails = () => {
             </div>
           </div>
         ) : (
-          <p className=" yFlex gap-4 text-[18px] font-semibold capitalize text-gray-600">
+          <p className=" cart-empty">
             <ShoppingCart className="w-8 h-8" />
             Cart Is Empty
           </p>
@@ -87,13 +79,13 @@ const CartDetails = () => {
   };
 
   return (
-    <div className="yFlex h-auto w-screen px-4 pt-28 mb-10">
-      <div className="yFlex gap-6 w-full max-w-[500px] yFlex bg-gray-200 py-10 rounded-xl">
+    <div className="main-cart-wrapper">
+      <div className="main-cart">
         {loggedInUser ? (
           cartProductIdList.length > 0 ? (
             renderCartProducts()
           ) : (
-            <h2 className="xFlex gap-4 text-primary mb-48 font-semibold text-[18px]">
+            <h2 className="icon-cart">
               <ShoppingCart className="w-8 h-8" />
               Cart Is Empty
             </h2>

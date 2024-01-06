@@ -1,18 +1,15 @@
 import React from "react";
-import "./componentUtility.css";
+
 import { XCircle } from "lucide-react";
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="modal-body shadow-2xl px-4" onClick={onClose}>
-      <div
-        className="relative bg-cardBg  p-8 rounded-md shadow-2xl max-w-md w-full text-center border border-primary"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="modal-body-wrapper" onClick={onClose}>
+      <div className="modal-body" onClick={(e) => e.stopPropagation()}>
         <XCircle
-          className="absolute top-3 right-3 text-primary cursor-pointer"
+          className="icon-xcircle"
           size={24}
           strokeWidth={2.5}
           onClick={onClose}

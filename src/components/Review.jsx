@@ -19,10 +19,7 @@ const Review = ({ productId }) => {
   const renderReviewOfCustomers = () => {
     return review.map((customerReview) => {
       return (
-        <div
-          key={customerReview.reviewText}
-          className="text-[14px] w-full xFlex !justify-start gap-4 capitalize text-start bg-cardBg p-2 rounded-lg shadow border border-gray-400  s:w-full s:max-w-[500px]"
-        >
+        <div key={customerReview.reviewText} className="customerReview">
           <p>{customerReview.reviewText}</p>
           <p>{customerReview.rating}</p>
         </div>
@@ -31,15 +28,9 @@ const Review = ({ productId }) => {
   };
   return (
     <div>
-      <form
-        onSubmit={addReview}
-        className="yFlex px-4  w-screen h-auto mt-10 pb-10 "
-      >
-        <div className="yFlex  w-screen px-4 s:px-8 md:px-10 lg:px-20">
-          <label
-            htmlFor="reviewText"
-            className="text-[12px] mb-2 w-full s:w-full s:max-w-[500px] text-left "
-          >
+      <form onSubmit={addReview} className="review-form ">
+        <div className="review-form-wrapper ">
+          <label htmlFor="reviewText" className="review-label ">
             Write Review
           </label>
 
@@ -47,17 +38,14 @@ const Review = ({ productId }) => {
             id="reviewText"
             type="text"
             ref={reviewRef}
-            className="rounded-md px-3 py-1 border-[1.5px] border-primary  border-opacity-50 w-full s:w-full s:max-w-[500px]"
+            className="review-input"
           ></input>
-          <button
-            type="submit"
-            className="xFlex w-full bg-primary rounded-lg px-6 py-2 text-white text-opacity-95 font-medium hover:bg-opacity-60 mt-8 s:w-full s:max-w-[500px]"
-          >
+          <button type="submit" className="review-btn">
             Add Review
           </button>
         </div>
       </form>
-      <div className="yFlex px-4 w-screen  pb-10  rounded-lg gap-4">
+      <div className="all-reviews">
         {review ? renderReviewOfCustomers() : <p>No Reviewes</p>}
       </div>
     </div>
