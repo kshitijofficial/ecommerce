@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.urbanist {
+  font-family: "Urbanist", sans-serif;
+}
+@layer components {
+  .btnPrimary {
+    @apply text-white text-opacity-95 px-6 py-[10px] bg-primary rounded-lg hover:bg-opacity-70 mt-10;
+  }
+}
+@layer utilities {
+  /* NAVBAR */
+  .xFlex {
+    @apply flex justify-center items-center;
+  }
+  .yFlex {
+    @apply flex flex-col justify-center items-center;
+  }
+  .nav {
+    @apply w-screen flex justify-between items-center px-4 md:px-10 lg:px-20  py-4 shadow;
+  }
+
+  .nav-logo {
+    @apply text-[21px] text-secondary font-bold;
+  }
+
+  /* ICONS */
+  .signOut-icon {
+    @apply bg-primary p-[6px] w-8 h-8 text-gray-200 rounded-md md:hidden cursor-pointer hover:bg-opacity-70;
+  }
+}
+
+/* vibrating effect */
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-10px);
+  }
+  40%,
+  80% {
+    transform: translateX(10px);
+  }
+}
