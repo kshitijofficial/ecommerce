@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
-import "./ProductCard.css"
-const ProductCard = ({id,name,img})=>{
- return(
-   <div>
-    <Link to={`/product/${id}`}>
-      <div className="card">
-        <p>{name}</p>
-        <img src={img} width={"200px"}/>
-      </div>
-    </Link>
-    </div>
 
- )
-}
+const ProductCard = ({ id, name, img }) => {
+  return (
+    <div className=" productCard-wrapper">
+      <Link to={`/product/${id}`}>
+        <div>
+          <div className="h-[200px] w-[250px]">
+            <img src={img} className="productCard-img" />
+          </div>
+          <p className="productCard-name">{name}</p>
+        </div>
+      </Link>
+    </div>
+  );
+};
 export default ProductCard;
